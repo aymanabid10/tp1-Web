@@ -26,15 +26,17 @@ function playGame(){
     }
     if(Game[ind].tent!= 0 && x == parseInt(essai)){
         alert("vous avez gangé !");
+        Game[ind].tent = s[2] - ind + 1;
         start();
     }else{
         Game[ind].tent-- ;
         alert(`vous avez perdu ! \nIl vous reste ${Game[ind].tent} Tentatives.`);
         if(Game[ind].tent == 0){
             alert("Le jeu est terminé, essayer de nouveau !");
-            document.getElementById("interval").innerHTML = `${Game[ind].begin} et ${Game[ind].end}, vous avez en total : ${Game[ind].tent}`;
             Game[ind].tent = s[2] - ind + 1;
         }
+        document.getElementById("interval").innerHTML = `${Game[ind].begin} et ${Game[ind].end}, vous avez en total : ${Game[ind].tent}`;
+
     }
 }
 
