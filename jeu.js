@@ -15,7 +15,7 @@ function start(){
     document.getElementById("interval").innerHTML = `${Game[ind].begin} et ${Game[ind].end}, vous avez en total : ${Game[ind].tent}`;
     return [ind, Game[ind].tent,l];
 }
-function difficulty(){
+function playGame(){
     s = start();
     ind = s[0]
     x = Math.floor(Math.random() * Game[ind].end);
@@ -42,5 +42,5 @@ window.addEventListener("load", ()=>{
     onLoad();
     start();
 });
-document.getElementById("dev").addEventListener("click", difficulty);
+document.getElementById("dev").addEventListener("click", playGame);
 document.getElementById("l").addEventListener("change", start);
